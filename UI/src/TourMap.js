@@ -3534,13 +3534,13 @@ const TourMap = (props) => {
   async function drawLines() {
     for (let i = 1; i < arr.length; i++) {
       distance += parseFloat(matrix[arr[i - 1]][arr[i]]);
-      setDist(distance);
+      setDist(distance*1000);
 
       await drawLine(locationsList[arr[i - 1]], locationsList[arr[i]]);
     }
     await drawLine(locationsList[arr[arr.length - 1]], locationsList[arr[0]]);
     distance += parseFloat(matrix[arr[arr.length - 1]][arr[0]]);
-    setDist(distance);
+    setDist(distance*1000);
   }
 
   async function drawLine(marker1, marker2) {
