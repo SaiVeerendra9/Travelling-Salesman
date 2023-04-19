@@ -1,11 +1,11 @@
-Project Name:
+**Project Name:**
 The Traveling Salesman Problem
 
-Requirements:
+**Requirements:**
 Java SE
 NodeJS
 React
-Backend
+**Backend*
 To run the program only in java run Driver.java file. This will display the results of the project in your IDE terminal.
 
 Visualization:
