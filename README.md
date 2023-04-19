@@ -19,12 +19,11 @@ To run the UI, run npm start and open localhost:3000.
 Our backend is running on localhost:8080, if the frontend fails to run, you can view the tour array on the following URLs:<br/><br/>
 
 
-**
-localhost:8080/christofides<br/>
-localhost:8080/two-opt<br/>
-localhost:8080/three-opt<br/>
-localhost:8080/aco<br/>
-localhost:8080/sa**<br/>
+**localhost:8080/christofides**<br/>
+**localhost:8080/two-opt**<br/>
+**localhost:8080/three-opt**<br/>
+**localhost:8080/aco**<br/>
+**localhost:8080/sa**<br/>
 Once **localhost:3000** is opened, ONLY use the navbar to navigate between the 5 algorithm visualizations.
 
 Christofides and Two opt return data almost immediately and start showing the tour on our map. However, Simulated Annealing and Ant Colony Optimization take almost 2-3 minutes to run. Three-opt takes 15-20 minutes to run. It is recommended not to switch algorithm selection before the algorithm fully prints the route on the map.
