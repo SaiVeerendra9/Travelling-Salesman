@@ -21,7 +21,7 @@ public class MST {
         for (int i = 1; i < V; i++) {
             dist += graph[i][parent[i]];
         }
-        System.out.println("MST Distance : " + (dist + graph[parent[parent.length - 1]][parent[1]]));
+        System.out.println("\nMST Distance : " + ((dist + graph[parent[parent.length - 1]][parent[1]])*1000));
 
     }
 

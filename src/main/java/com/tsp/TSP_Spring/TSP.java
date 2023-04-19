@@ -132,14 +132,14 @@ public class TSP {
             for (int i = 0; i < newTour.length; i++) {
                 twoOptNewList.add(newTour[i]);
             }
-            System.out.print("2-opt distance=" + TourDistance.tourDistance(twoOptNewList, graph));
+            System.out.print("2-opt distance=" + (TourDistance.tourDistance(twoOptNewList, graph)*1000));
             return twoOptNewList;
         }
         // three-opt
         if (a == 2) {
             List<Integer> threeOptNewList = new ArrayList<>();
             threeOptNewList = ThreeOpt.threeOptAlgorithm(christofidesList, graph);
-            System.out.print("Three opt tour distance: " + TourDistance.tourDistance(threeOptNewList, graph) * 1000);
+            System.out.print("Three opt tour distance: " + (TourDistance.tourDistance(threeOptNewList, graph) * 1000));
             return threeOptNewList;
         }
         // Ant Colony Optimization
@@ -158,7 +158,7 @@ public class TSP {
             for (int i = 0; i < acoTour.length; i++) {
                 ACONewList.add(acoTour[i]);
             }
-            System.out.println("Length of best tour ACO: " + TourDistance.tourDistance(ACONewList, graph) * 1000);
+            System.out.println("Length of best tour ACO: " + (TourDistance.tourDistance(ACONewList, graph) * 1000));
             return ACONewList;
 
         }
