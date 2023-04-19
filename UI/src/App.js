@@ -39,7 +39,45 @@ const App = () => {
 
   return (
     <div>
-      
+      <Router >
+        <div className="App">
+          <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+            <div className="navbar-header display-5">
+              <Link className="navbar-brand" to="/">PSA</Link>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navData" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div className='collapse navbar-collapse' id='navData'>
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/Christofides">Christofides</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/twoOpt">Two-Opt</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/threeOpt">Three-Opt</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/aco">Ant Colony Optimization</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/sa">Simualated Annealing</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>          
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route exact path="/Christofides" render={() => <TourMap data={"christofides"} />} />
+            <Route exact path="/twoOpt" render={() => <TourMap data={"two-opt"} />} />
+            <Route exact path="/threeOpt" render={() => <TourMap data={"three-opt"} />} />
+            <Route exact path="/aco" render={() => <TourMap data={"aco"} />} />
+            <Route exact path="/sa" render={() => <TourMap data={"sa"} />} />
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
