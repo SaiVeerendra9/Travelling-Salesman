@@ -16,6 +16,11 @@ public class TSP {
 
         double distance = 0.0;
 
+        System.out.println("MST Tour Start..");
+        MST mst = new MST();
+        mst.primMST(graph);
+        System.out.println("MST Tour Ended..");
+
         System.out.println("Two-Opt Tour Start..");
         int[] newTour = TwoOpt.twoOpt(christofidesSolution, graph);
         List<Integer> twoOptNewList = new ArrayList<>();
@@ -29,5 +34,5 @@ public class TSP {
         System.out.println("2-opt distance=" + TourDistance.tourDistance(twoOptNewList, graph));
         System.out.println("Two-opt Tour Ended..");
 
-           }
+    }
 }
