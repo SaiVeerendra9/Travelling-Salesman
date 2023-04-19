@@ -1,5 +1,7 @@
 package com.tsp.TSP_Spring;
 
+import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TSP {
@@ -20,6 +22,21 @@ public class TSP {
         MST mst = new MST();
         mst.primMST(graph);
         System.out.println("MST Tour Ended..");
+
+        System.out.println("Christofides Tour Start");
+        int[] christofidesSolution = Christofides.applyChristofidesAlgorithm(graph);
+        List<Integer> christofidesList = new ArrayList<>();
+        for (int i = 0; i < christofidesSolution.length; i++) {
+            christofidesList.add(christofidesSolution[i]);
+            System.out.print("Crime ID: " + crimeIDs.get(i));
+            System.out.print(", Latitide: " + coOrdinates.get(i)[1]);
+            System.out.print(", Longitude: " + coOrdinates.get(i)[0]);
+            System.out.println();
+        }
+
+        distance = TourDistance.tourDistance(christofidesList, graph);
+        System.out.println("\nTotal distance w Christofides: " + distance * 1000);
+        System.out.println("Christofides Tour Ended..");
 
         System.out.println("Two-Opt Tour Start..");
         int[] newTour = TwoOpt.twoOpt(christofidesSolution, graph);
